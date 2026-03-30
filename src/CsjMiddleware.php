@@ -57,12 +57,12 @@ class CsjMiddleware
         return function ($request, array $options) use ($handler) {
             $currentTime = time();
             $parsed = $this->parseRequest($request);
-            $parsed['query']['user_id'] = [$this->userId];
-            $parsed['query']['role_id'] = [$this->roleId];
-            $parsed['query']['current_time'] = [date('Y-m-d H:i:s', $currentTime)];
-            $parsed['query']['timestamp'] = [$currentTime];
-            $parsed['query']['sign_type'] = ['MD5'];
-            $parsed['query']['version'] = ['2.0'];
+            $parsed['query']['user_id'] = $this->userId;
+            $parsed['query']['role_id'] = $this->roleId;
+            $parsed['query']['current_time'] = date('Y-m-d H:i:s', $currentTime);
+            $parsed['query']['timestamp'] = $currentTime;
+            $parsed['query']['sign_type'] = 'MD5';
+            $parsed['query']['version'] = '2.0';
             $parsed['query']['sign'] = $this->sign($parsed['query']);
 
             $request = $this->buildRequest($parsed);
