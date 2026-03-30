@@ -1,0 +1,33 @@
+{
+    "name": "larva/csjplatform-guzzle-middleware",
+    "description": "The Php SDK of csj platform ad service",
+    "type": "library",
+    "readme": "README.md",
+    "homepage": "https://github.com/larva-cool/csjplatform-guzzle-middleware",
+    "license": "MIT",
+    "keywords": [
+        "sdk",
+        "csj",
+        "csjplatform"
+    ],
+    "require": {
+        "php": ">=8.0",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "~7.0",
+        "guzzlehttp/psr7": "~2.0"
+    },
+    "require-dev": {
+        "laravel/framework": "^12.0"
+    },
+    "authors": [
+        {
+            "name": "Xu TL",
+            "email": "xutongle@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Larva\\GuzzleHttp\\Csj\\": "src"
+        }
+    }
+}
